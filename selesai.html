@@ -243,20 +243,20 @@
   }
 
   // Print to PDF function
-  function printToPDF() {
-      const { jsPDF } = window.jspdf;
-      const content = document.getElementById("contentToPrint");
+    function printToPDF() {
+        const { jsPDF } = window.jspdf;
+        const content = document.getElementById("contentToPrint");
 
-      html2canvas(content).then(canvas => {
-          const imgData = canvas.toDataURL('image/png');
-          const pdf = new jsPDF("p", "mm", "a4");
-          const imgWidth = 190;
-          const imgHeight = (canvas.height * imgWidth) / canvas.width;
-          
-          pdf.addImage(imgData, 'PNG', 10, 10, imgWidth, imgHeight);
-          pdf.save("Laporan_Kedatangan_Keberangkatan.pdf");
-      });
-  }
+        html2canvas(content, { scale: 1 }).then(canvas => {
+            const imgData = canvas.toDataURL('image/jpeg', 0.6);
+            const pdf = new jsPDF("p", "mm", "a4");
+            const imgWidth = 190;
+            const imgHeight = (canvas.height * imgWidth) / canvas.width;
+
+            pdf.addImage(imgData, 'JPEG', 10, 10, imgWidth, imgHeight);
+            pdf.save("Laporan_Kedatangan_Keberangkatan.pdf");
+        });
+    }
 
   // Fungsi untuk mengekspor data ke Excel
   function exportToExcel() {
