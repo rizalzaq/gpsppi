@@ -289,13 +289,13 @@
   
   // Membuat marker menjadi icon kereta api
   const trainIcon = L.icon({
-      iconUrl: 'assets/images/train.png', // Ganti dengan ikon kereta yang lebih bagus
+      iconUrl: 'assets/images/train.png', // logo icon kereta
       iconSize: [40 , 40], // ukuran icon
-      iconAnchor: [20, 40], // titik anchor
+      iconAnchor: [40, 40], // titik anchor
       popupAnchor: [0, -40] // posisi popup
   });
 
-  let marker = L.marker([-6.200000, 106.816666], { icon: trainIcon }).addTo(map);  // Marker default di Jakarta
+  let marker = L.marker([-6.200000, 106.816666], { icon: trainIcon }).addTo(map);
 
   // Array untuk menyimpan koordinat lintasan
   let trackPath = [];
