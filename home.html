@@ -182,7 +182,7 @@
                 </div>
             </div>
             <div class="card card-custom p-2">
-                <h6 class="card-title text-center">Time (WIT)</h6>
+                <h6 class="card-title text-center">Time (WITA)</h6>
                 <div class="card-body text-center">
                     <p class="card-text" id="time">Loading...</p>
                 </div>
@@ -652,7 +652,7 @@ document.getElementById('finishButton').addEventListener('click', function() {
 
         // Create a new Date object and adjust it to WITA (UTC +8)
         const date = new Date();
-        const witaTime = new Date(date.toLocaleString("en-US", { timeZone: "Asia/Jakarta" }));
+        const witaTime = new Date(date.toLocaleString("en-US", { timeZone: "Asia/Makassar" }));
 
         // Format the time
         const formattedTime = witaTime.toLocaleTimeString('en-US', options);
